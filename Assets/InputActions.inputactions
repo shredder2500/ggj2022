@@ -2,13 +2,242 @@
     "name": "InputActions",
     "maps": [
         {
-            "name": "GamePlay-BuildMode",
+            "name": "AttackMode",
+            "id": "449500f8-1dad-4caa-bf56-ffcd087d2ccb",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "3d4fb611-8bec-4e0c-8b0a-cfad44df7444",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TurretMode",
+                    "type": "PassThrough",
+                    "id": "8380f7ec-ad4d-4434-ac87-be16ff8bff04",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BuildMode",
+                    "type": "PassThrough",
+                    "id": "ef54bab0-a20c-4673-8cf7-e595abd00cea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WASD",
+                    "id": "837fde40-6aa5-4a3d-9833-2232b8c262a5",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "af9dc804-6fe0-4ff2-baa8-ef67063be5c2",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "37f330f9-33bf-424b-945f-abd8a2e795aa",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "f0ddcd25-d675-4ac8-93e9-071d7d3e216d",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "b2026d71-2f91-4bf7-a63f-0ff46c724d90",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "559e0545-feb9-4fc5-a4ee-7afd869c8c5d",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec81977b-46f0-47d8-9af5-a86acd971ac6",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11e9f842-d7e2-4c76-94c2-329ed03ff979",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f04bc0d-980f-4d88-bbb6-5689d1fb3491",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "TurretMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7db0e336-742f-4e6d-a412-c066e80c666c",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "BuildMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TurretMode",
+            "id": "37d35aaa-1de3-42b9-b1dd-c94eedc61040",
+            "actions": [
+                {
+                    "name": "BuildMode",
+                    "type": "PassThrough",
+                    "id": "14ce76b7-5eca-4547-bc1a-40b5594b397a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AttackMode",
+                    "type": "PassThrough",
+                    "id": "469562c1-b890-499e-879f-3a0f6291d7a4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e6d5e82f-ceab-47f3-b055-7d5d70f79a85",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "BuildMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "417527c0-edba-4c9b-b4dd-c33f121cfa81",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "AttackMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "BuildMode",
             "id": "27a98568-6e0f-421a-aa18-8299d1bde280",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
                     "id": "e0c9fd3c-caaa-495a-a5d8-1add7c314e24",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "BuildMenu",
+                    "type": "PassThrough",
+                    "id": "8fd417f2-c05f-486d-82d0-1a68c5515133",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Build",
+                    "type": "PassThrough",
+                    "id": "b5b66d24-fbe7-4c94-9e58-8b97544b154a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "AttackMode",
+                    "type": "PassThrough",
+                    "id": "cb58e46e-bdc2-4dab-8e92-10fc3f5202f4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MousePos",
+                    "type": "Value",
+                    "id": "8bcbd77d-7099-46a2-8cf3-600dee7dbc90",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -70,38 +299,120 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5b0fcb0f-fbd9-4091-85d5-88ca5ddd563a",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e683d38c-1d3d-4d58-bc50-ef5dffad889c",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e426218-83bb-420e-8f68-8d024709d6fe",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3058425e-5a17-448c-aaf8-8717a08bd8b4",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "BuildMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "374b074b-1d50-4cfd-ac79-b86b6de7199b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Build",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb56252d-df90-41a8-b90f-a6f4dd68f763",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "AttackMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65a55eab-7d90-4212-a3f0-65113ef20de5",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "MousePos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "GamePlay-AttackMode",
-            "id": "449500f8-1dad-4caa-bf56-ffcd087d2ccb",
-            "actions": [],
-            "bindings": []
-        },
-        {
-            "name": "Menu",
+            "name": "BuildMenu",
             "id": "189cbb41-904f-43da-8008-de5eaad05bf4",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "f8c5232c-e1ff-407f-9f7e-3f24840da553",
+                    "name": "AttackMode",
+                    "type": "PassThrough",
+                    "id": "e4cabbf2-303b-4bd9-b526-0209f7fe0693",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "8a0e7a56-f7f4-432e-ab87-db1577e53264",
-                    "path": "",
+                    "id": "45f87e33-9f39-4803-bf68-061ab065c40f",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "New action",
+                    "action": "AttackMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7dd3e8c6-5da4-423a-93ac-1f2fb6244ad4",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "AttackMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -131,6 +442,11 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Joystick>",
                     "isOptional": false,
                     "isOR": false
                 }
