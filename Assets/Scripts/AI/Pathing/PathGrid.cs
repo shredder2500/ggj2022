@@ -1,48 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace AI.Pathing {
-public class PathGrid : MonoBehaviour {
-  [SerializeField] private Vector2Int size = new Vector2Int(100, 100);
-
-  public Vector2Int Size => size;
+public class PathGrid {
   private Dictionary<Vector2Int, GridNode> _nodes;
 
-  private void Awake() {
-    
+  public PathGrid(Vector2 center, Vector2Int size) {
+    var startX = Mathf.RoundToInt(center.x) - size.x / 2;
+    var startY = Mathf.RoundToInt(center.y) - size.y / 2;
     _nodes = Enumerable.Range(0, size.x * size.y).Select(i => {
       var y = i / size.x;
       var x = i - y * size.x;
-      return new GridNode(x, y, 0, false);
+      return new GridNode(startX + x, startY + y, 1, false);
     }).ToDictionary(n => new Vector2Int(n.X, n.Y));
   }
-
+  
   public GridNode GetNode(Vector2 point) => GetNode(Mathf.RoundToInt(point.x), Mathf.RoundToInt(point.y));
 
   public GridNode GetNode(int x, int y) => _nodes.TryGetValue(new(x, y), out var node) ? node : null;
 
-  private void OnDrawGizmosSelected() {
-    for (var x = -.5f; x < size.x; x++) {
-      for (var y = -.5f; y < size.y; y++) {
-        if (_nodes != null) {
-          var node = GetNode(new(x + .5f, y + .5f));
-          if (node is { Blocked: true }) {
-            var dColor = Gizmos.color;
-            Gizmos.color = Color.red;
-            Gizmos.DrawCube(node.Point, Vector3.one);
-            Gizmos.color = dColor;
-          }
-        }
+  public PathGrid Clone() =>
+    new(_nodes.ToDictionary(x => x.Key, x => new GridNode(x.Value.X, x.Value.Y, x.Value.Cost, x.Value.Blocked)));
 
-        if (x + 1 < size.x)
-          Gizmos.DrawLine(new (x, y, 0), new (x + 1, y, 0));
-        if (y + 1 < size.y)
-          Gizmos.DrawLine(new (x, y, 0), new (x, y + 1, 0));
+  private PathGrid(Dictionary<Vector2Int, GridNode> nodes) => _nodes = nodes;
+
+  public void DrawGizmos() {
+    var dColor = Gizmos.color;
+    foreach (var node in _nodes.Values) {
+      
+      if (node.Blocked) {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(new (node.Point.x, node.Point.y), Vector3.one); 
+        Gizmos.color = dColor;
+      }
+      else {
+        Gizmos.DrawWireCube(new (node.Point.x, node.Point.y), Vector3.one);
       }
     }
+
   }
 }
 }

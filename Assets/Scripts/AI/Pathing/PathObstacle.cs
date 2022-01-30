@@ -11,8 +11,7 @@ public class PathObstacle : MonoBehaviour {
   private GridNode _node;
   
   private void Start() {
-    _pathGrid = FindObjectOfType<PathGrid>();
-    Debug.Assert(_pathGrid);
+    _pathGrid = FindObjectOfType<PathGridObj>().Grid;
     _node = _pathGrid.GetNode(transform.position2D());
     _node?.Block();
   }

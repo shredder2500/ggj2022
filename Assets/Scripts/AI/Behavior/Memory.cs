@@ -7,7 +7,8 @@ public class Memory {
   public void Set<T>(string key, T value) {
     if (_cache.ContainsKey(key))
       _cache[key] = value;
-    _cache.Add(key, value);
+    else
+      _cache.Add(key, value);
   }
 
   public T Get<T>(string key) => (T)_cache[key];
@@ -15,5 +16,7 @@ public class Memory {
   public bool Contains(string key) => _cache.ContainsKey(key);
 
   public void Clear() => _cache.Clear();
+
+  public void Remove(string key) => _cache.Remove(key);
 }
 }
